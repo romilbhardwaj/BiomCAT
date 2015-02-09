@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+
+{% block content %}
+<div class="container">
+<div class= "col-md-5 col-md-offset-3">
+<h3>Hello.</h3>
+<p>Welcome to BiomCAT. Before we get started, please fill in the following details.</p>
+<form role="form" class="form-horizontal" method="post" enctype="multipart/form-data">
+    {% bootstrap_form form %}
+    {% csrf_token %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    {% endbuttons %}
+</form>
+<p>As soon as you press submit, the evaluation will start. You will be shown an image for 5 seconds, followed by a question. Please answer the question to the best of your ability.</p>
+</div>
+</div>
+{% endblock %}
